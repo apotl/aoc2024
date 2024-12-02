@@ -1,5 +1,3 @@
-import copy
-
 reports = []
 
 with open("input.txt") as f:
