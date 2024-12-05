@@ -25,7 +25,6 @@ def correct_page_order(pagelist: list) -> list:
             continue
         if pagelist.index(rule[0]) > pagelist.index(rule[1]):
             pagelist[pagelist.index(rule[0])], pagelist[pagelist.index(rule[1])] = pagelist[pagelist.index(rule[1])], pagelist[pagelist.index(rule[0])]
-            #print(pagelist)
     
     if not is_correctly_ordered(pagelist):
         pagelist = correct_page_order(pagelist)
@@ -43,14 +42,9 @@ print(ans_pt1)
 
 ans_pt2 = 0 
 for p in pagelists:
-    #print(p)
-    if is_correctly_ordered(p):
-        ans_pt2 += p[int(len(p) / 2)]
-        ans_pt2 -= p[int(len(p) / 2)]
-    else:
+    if not is_correctly_ordered(p):
         p = correct_page_order(p)
         if is_correctly_ordered(p):
-            #print("fixed", p[int(len(p) / 2)])
             ans_pt2 += p[int(len(p) / 2)]
 
 print(ans_pt2)
