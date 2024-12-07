@@ -6,7 +6,6 @@ with open('input.txt') as f:
     for line in f:
         equations += [(int(line.split(":")[0]), [int(x) for x in line.split(": ")[1].split()])]
 
-ans_pt1 = 0
 def try_perms(eqs, operators):
     sum_valid = 0
     for eq in eqs:
